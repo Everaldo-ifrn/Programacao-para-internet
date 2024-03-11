@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - JavaScript</title>
+</head>
+<body>
+    <h1>Calculadora - JS</h1>
+    <button onclick="soma()">Soma</button>
+    <button onclick="sub()">Subtração</button>
+    <button onclick="mult()">Multiplicação</button>
+    <button onclick="div()">Divisão</button>
+    <p>Resultado:</p>
+    <p id="result"></p>
+
+</body>
+<script>
+    var n1 = prompt('Digite um número: ')
+    var n2 = prompt('Digite outro número: ')
+
+    function  soma(){
+        var resultado = Number(n1) + Number(n2)
+        document.getElementById("result").innerText = resultado
+    }
+
+    function sub(){
+        var resultado = Number(n1) - Number(n2)
+        document.getElementById("result").innerText = resultado
+    }
+
+    function mult(){
+        var resultado = Number(n1) * Number(n2)
+        document.getElementById("result").innerText = resultado
+    }
+
+    function div(){
+        var resultado = Number(n1) / Number(n2)
+        document.getElementById("result").innerText = resultado
+    }
+</script>
+</html>
