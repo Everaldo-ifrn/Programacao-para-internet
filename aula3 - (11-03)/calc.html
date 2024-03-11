@@ -5,38 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - JavaScript</title>
 </head>
+
 <body>
     <h1>Calculadora - JS</h1>
-    <button onclick="soma()">Soma</button>
-    <button onclick="sub()">Subtração</button>
-    <button onclick="mult()">Multiplicação</button>
-    <button onclick="div()">Divisão</button>
-    <p>Resultado:</p>
+    <p id="numEscolhidos"></p>
+    <button onclick="soma()">Soma (+)</button>
+    <button onclick="sub()">Subtração (-)</button>
+    <button onclick="mult()">Multiplicação (*)</button>
+    <button onclick="div()">Divisão(/)</button>
     <p id="result"></p>
-
 </body>
+
 <script>
     var n1 = prompt('Digite um número: ')
     var n2 = prompt('Digite outro número: ')
+    document.getElementById("numEscolhidos").innerText = `Numeros escolhidos: ${n1} e ${n2}`
 
     function  soma(){
         var resultado = Number(n1) + Number(n2)
-        document.getElementById("result").innerText = resultado
+        document.getElementById("result").innerText = `Resultado: ${resultado}`
     }
 
     function sub(){
         var resultado = Number(n1) - Number(n2)
-        document.getElementById("result").innerText = resultado
+        document.getElementById("result").innerText = `Resultado: ${resultado}`
     }
 
     function mult(){
         var resultado = Number(n1) * Number(n2)
-        document.getElementById("result").innerText = resultado
+        document.getElementById("result").innerText = `Resultado: ${resultado}`
     }
 
     function div(){
         var resultado = Number(n1) / Number(n2)
-        document.getElementById("result").innerText = resultado
+        document.getElementById("result").innerText = `Resultado: ${resultado}`
     }
 </script>
 </html>
