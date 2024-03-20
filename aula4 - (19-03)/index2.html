@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo da forca</title>
 </head>
 <body>
+    <h1>Jogo da Forca - JS</h1>
     <p id="palavraOculta"></p>
-    <form action="">
-        <label for="x">Digite um letra: </label>
-        <input id="input" type="text" id="x">
-        <button id="forc">Enviar</button>
-        
+    <p id="letrasUsadas">Letras já usadas: </p>
+    <form>
+        <label for="">Digite uma letra:</label>
+        <input id="input" type="text">
+        <br>
+        <button id="meuBotao">Jogar</button>
     </form>
-    
+
     <script>
+        let letrasUsadas = ''
         const palavras = ["javascript", "programacao", "computador", "desenvolvimento"];
         var numAleatorio = Math.floor(Math.random()*4)
         var palavraSorteada = palavras[numAleatorio]
@@ -22,30 +26,34 @@
         for (letra in palavraSorteada){ 
             palavraSort = palavraSort + '-'
         }
-        document.getElementById("palavraOculta").innerText = palavraSort
-
-        var botao = document.getElementById("forc");
+        document.getElementById("palavraOculta").innerText = palavraSort //sorteia uma palavra da lista 
 
         
+        var botao = document.getElementById("meuBotao");
+        botao.addEventListener("click", forca)
         function forca() {
             var l = document.getElementById('input').value
+            letrasUsadas = letrasUsadas + l
             var palavraDpsSorteada = ''
+            
             for (letra in palavraSorteada) {
                 if (letra == l){
                     palavraDpsSorteada = palavraDpsSorteada + l
+                    console.log('Acertou uma letra!')
                 }
                 else if (letra != l){
                     palavraDpsSorteada =palavraDpsSorteada + '-'
+                       
                 }
-                else if(letra == palavras[-1]){
-                    pass
+
+                document.getElementById("palavraOculta").innerText = palavraDpsSorteada
+                document.getElementById("letrasUsadas").innerText = letrasUsadas
+
+                if (letra == palavraSorteada[palavraSorteada.length - 1]){
+                    break
                 }
             }
-            
-            document.getElementById("palavraOculta").innerText = palavraDpsSorteada
-
         }
-        botao.addEventListener("click", forca());
 
     </script>
 </body>

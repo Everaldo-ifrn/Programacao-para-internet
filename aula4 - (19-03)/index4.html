@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+</head>
+<body>
+    <h1>Jogo da forca - javaScripts</h1>
+    <p id="palavraOculta"></p>
+    <p id="letrasUsadas"></p>
+
+    <form>
+        <label for="letra"></label>
+        <input type="text" id="letra"/>
+    </form>
+
+    <button onclick="jogar()">JOGAR</button>
+
+    <script>
+        const palavras = ["javascript", "programacao", "computador", "desenvolvimento"];
+        var numAleatorio = Math.floor(Math.random()*4)
+        var palavraSorteada = palavras[numAleatorio]
+        var palavraSort = ""
+        for (letra in palavraSorteada){ 
+            palavraSort = palavraSort + '-'
+        }
+        document.getElementById("palavraOculta").innerText = palavraSort
+        var palavraDescoberta = ''
+        var letrasUsadas = []
+        alert('Reiniciei :)')
+
+        
+
+        function jogar(){
+            var letra = document.getElementById('letra').value
+            alert(`1 ${palavraSort}`)
+
+            if (palavraSorteada.includes(letra)){
+                for (var i = 0; i < palavraSorteada.length; i++) {
+                    if (palavraSorteada[i] == letra){
+                        palavraDescoberta = palavraDescoberta + letra
+                        letrasUsadas = letrasUsadas + letra
+
+                    }
+                    else if(palavraSorteada[i] != letra){
+                        palavraDescoberta = palavraDescoberta + '-'
+                    }
+                }
+            }
+            else{
+                letrasUsadas = letrasUsadas + letra
+            }
+
+            alert(`2 ${palavraSort}`)
+            palavraSort = palavraDescoberta
+            alert(`3 ${palavraSort}`)
+            document.getElementById("palavraOculta").innerText = palavraSort
+            document.getElementById("letrasUsadas").innerText = `Letras usadas: ${letrasUsadas}`
+            alert(`4 ${palavraSort}`)
+            palavraDescoberta = ''
+            
+        }
+    </script>
+</body>
+</html>

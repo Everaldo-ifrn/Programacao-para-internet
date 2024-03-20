@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+</head>
+<body> 
+    <h1>Jogo da forca - JS</h1>
+    <p id="palavraOculta">[palavra oculta]</p>
+    <p>Letras usadas: </p>
+    <p></p>
+
+    <form>
+        <label for="letra">Digite uma letra: </label>
+        <input type="text" id="letra"/>
+        <button id="jogar">Jogar</button>
+    </form>
+
+    <script>
+        // let letrasUsadas = ''
+        const palavras = ["javascript", "programacao", "computador", "desenvolvimento"];
+        var numAleatorio = Math.floor(Math.random()*4)
+        var palavraSorteada = palavras[numAleatorio]
+        var palavraSort = ""
+        for (letra in palavraSorteada){ 
+            palavraSort = palavraSort + '-'
+        }
+        document.getElementById("palavraOculta").innerText = palavraSort //sorteia uma palavra da lista
+
+        document.getElementById("letra").addEventListener("keypress", function(event) {
+            
+            if (event.key === 'Enter') {
+                var l = document.getElementById("letra").value
+                alert(l)
+                
+            }
+            
+        })
+
+        
+    </script>
+</body>
+</html>
