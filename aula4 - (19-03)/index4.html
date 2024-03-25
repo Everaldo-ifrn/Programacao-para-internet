@@ -37,7 +37,34 @@
             var letra = document.getElementById('letra').value
             alert(`1 ${palavraSort}`)
 
+            palavraSort = ""
+
+            var letrasCorretas = [] // Array para armazenar as letras corretas descobertas e seus índices
+    
             if (palavraSorteada.includes(letra)){
+                for (var i = 0; i < palavraSorteada.length; i++) {
+                    if (palavraSorteada[i] == letra){
+                        letrasCorretas.push({ letra: letra, indice: i }) // Armazena a letra correta e seu índice
+                        letrasUsadas = letrasUsadas + letra
+                    }
+                }
+            }
+            else{
+                letrasUsadas = letrasUsadas + letra
+            }
+
+            // Reconstrua palavraSort com base nas letras corretas descobertas e seus índices
+            for (var j = 0; j < palavraSorteada.length; j++) {
+                var letraAtual = palavraSorteada[j]
+                var letraDescoberta = letrasCorretas.find(item => item.indice === j)
+                if (letraDescoberta) {
+                    palavraSort += letraDescoberta.letra
+                } else {
+                    palavraSort += '-'
+                }
+            }
+
+            /*if (palavraSorteada.includes(letra)){
                 for (var i = 0; i < palavraSorteada.length; i++) {
                     if (palavraSorteada[i] == letra){
                         palavraDescoberta = palavraDescoberta + letra
@@ -51,14 +78,12 @@
             }
             else{
                 letrasUsadas = letrasUsadas + letra
-            }
+            }*/
 
             alert(`2 ${palavraSort}`)
-            palavraSort = palavraDescoberta
-            alert(`3 ${palavraSort}`)
             document.getElementById("palavraOculta").innerText = palavraSort
             document.getElementById("letrasUsadas").innerText = `Letras usadas: ${letrasUsadas}`
-            alert(`4 ${palavraSort}`)
+            alert(`3 ${palavraSort}`)
             palavraDescoberta = ''
             
         }

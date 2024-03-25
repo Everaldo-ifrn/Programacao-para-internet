@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca - JS</title>
+</head>
+<body>
+    <!-- Já sabe a resposta SIM ou NÃO - Ideia! -->
+    <h1>Jogo da forca - JavaScript</h1>
+    <p id="palavraOculta"></p>
+    <p>Letras usadas: </p>
+    <form>
+        <label for="letra" >Digite uma letra</label>
+        <input type="text" maxlength="1" id="letra">
+    </form>
+    <button onclick="jogar()">JOGAR</button>
+
+    <script>
+        // Sorteio da palavra
+        const palavras = ["javascript", "programacao", "computador", "desenvolvimento"];
+        var numAleatorio = Math.floor(Math.random()*4)
+        var palavraSorteada = palavras[numAleatorio]
+        var palavraSort = ""
+        for (letra in palavraSorteada){ 
+            palavraSort = palavraSort + '-'
+        }
+        document.getElementById("palavraOculta").innerText = palavraSort
+        
+        var letrasUsadas = []
+        
+
+        function jogar(){
+            // erro da letra repetida na lista de letras usadas!!!
+            var palavraSort2 = ''
+            var letra = document.getElementById("letra").value
+            if (letrasUsadas.includes(letra) == false){
+                letrasUsadas.push(letra)
+            }
+            
+            
+            
+            for (var l = 0; l < palavraSorteada.length; l++){
+                if (palavraSorteada[l] == letra){ 
+                    palavraSort2 = palavraSort2 + letra
+                    //alert('Entrei no IF')
+                }
+                else if (letrasUsadas.includes(letra)){ // pode ta crt e pode n ta
+                    for (n in letrasUsadas){
+                        if (palavraSorteada[l] == letrasUsadas[n]){
+                            palavraSort2 = palavraSort2 + letrasUsadas[n]
+                        }
+                    }
+                    alert('Entrei no ELSE IF')
+                    
+                }
+                // PORQUE NÃO TA CAINDO NO ELSE!!!???
+                else {
+                    palavraSort2 = palavraSort2 + '-'
+                    //alert('Entrei no ELSE IF - 2')
+                }
+                alert(letrasUsadas.includes(letra))
+            }
+            
+            alert(`1:${palavraSort2} 2:${letrasUsadas}`) //testeee!
+        }
+        
+    </script>
+
+</body>
+</html>
