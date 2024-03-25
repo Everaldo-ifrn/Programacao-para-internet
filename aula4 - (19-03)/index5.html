@@ -10,7 +10,7 @@
     <!-- Já sabe a resposta SIM ou NÃO - Ideia! -->
     <h1>Jogo da forca - JavaScript</h1>
     <p id="palavraOculta"></p>
-    <p>Letras usadas: </p>
+    <p id="letrasUsadas">Letras usadas: </p>
     <form>
         <label for="letra" >Digite uma letra</label>
         <input type="text" maxlength="1" id="letra">
@@ -32,7 +32,11 @@
         
 
         function jogar(){
-            // erro da letra repetida na lista de letras usadas!!!
+            // AVISO
+            // a palavra oculta não está se atualizando a cada letra descoberta!!!
+            // não tem sistema de ganho/perde
+            // não tem o desenho da forca
+
             var palavraSort2 = ''
             var letra = document.getElementById("letra").value
             if (letrasUsadas.includes(letra) == false){
@@ -44,26 +48,22 @@
             for (var l = 0; l < palavraSorteada.length; l++){
                 if (palavraSorteada[l] == letra){ 
                     palavraSort2 = palavraSort2 + letra
-                    //alert('Entrei no IF')
                 }
-                else if (letrasUsadas.includes(letra)){ // pode ta crt e pode n ta
+                /*else if (letrasUsadas.includes(letra)){ // pode ta crt e pode n ta
                     for (n in letrasUsadas){
                         if (palavraSorteada[l] == letrasUsadas[n]){
                             palavraSort2 = palavraSort2 + letrasUsadas[n]
                         }
-                    }
-                    alert('Entrei no ELSE IF')
-                    
-                }
-                // PORQUE NÃO TA CAINDO NO ELSE!!!???
+                    }  
+                }*/
                 else {
                     palavraSort2 = palavraSort2 + '-'
-                    //alert('Entrei no ELSE IF - 2')
                 }
-                alert(letrasUsadas.includes(letra))
             }
+            document.getElementById("palavraOculta").innerText = palavraSort2
+            document.getElementById("letrasUsadas").innerText = letrasUsadas
             
-            alert(`1:${palavraSort2} 2:${letrasUsadas}`) //testeee!
+
         }
         
     </script>
