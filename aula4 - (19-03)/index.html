@@ -2,51 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo da forca - JS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hack&display=swap">
+    <style>
+        *{
+            font-family: 'Hack', monospace;
+        }
+
+        body {
+            background-color: #F4EB16;
+            text-align: center;
+        }
+
+        .caixa{
+            background-color: white;
+            border-radius: 15px;
+            margin: 70px auto;
+            max-width: 500px;
+            padding-top: 5px;
+            padding-bottom: 20px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.189);
+        }
+
+        .butao{
+            background-color: #F4EB16;
+            border-radius: 13px;
+            max-width: 81px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+
+        .butao:hover{
+            background-color: #efe715;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #letrasUsadas{
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        #palavraOculta{
+            font-size: 25px;
+        }
+
+        #letra{
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <p id="palavraOculta"></p>
-    <form action="">
-        <label for="x">Digite um letra: </label>
-        <input id="input" type="text" id="x">
-        <button id="forc">Enviar</button>
-        
-    </form>
-    
+    <h1>Jogo da Forca - <span id="span">JavaScript</span></h1>
+    <div class="caixa">
+        <p id="palavraOculta"></p>
+        <p id="letrasUsadas">Letras usadas: </p>
+        <form>
+            <input type="text" maxlength="1" id="letra" placeholder="Digite uma letra aqui!">
+        </form>
+        <img src="imagens/0.png" alt="forca" id="forca">
+        <br>
+        <div class="butao" onclick="jogar()">JOGAR</div>
+    </div>
+
     <script>
+        // Sorteio da palavra
         const palavras = ["javascript", "programacao", "computador", "desenvolvimento"];
         var numAleatorio = Math.floor(Math.random()*4)
         var palavraSorteada = palavras[numAleatorio]
-        var palavraSort = ""
-        for (letra in palavraSorteada){ 
-            palavraSort = palavraSort + '-'
-        }
-        document.getElementById("palavraOculta").innerText = palavraSort
+        var palavraOculta = Array(palavraSorteada.length).fill('-');
 
-        var botao = document.getElementById("forc");
+        document.getElementById("palavraOculta").innerText = palavraOculta.join('');
 
-        
-        function forca() {
-            var l = document.getElementById('input').value
-            var palavraDpsSorteada = ''
-            for (letra in palavraSorteada) {
-                if (letra == l){
-                    palavraDpsSorteada = palavraDpsSorteada + l
+        var letrasUsadas = []
+        var num = 1
+
+        function jogar(){
+            var letra = document.getElementById("letra").value;
+            if (letrasUsadas.includes(letra) == false){
+                letrasUsadas.push(letra);
+            }
+
+            if (palavraSorteada.includes(letra) == false){
+                if (num < 4){
+                    document.getElementById("forca").src=`imagens/${num}.png`
+                    num = num + 1
                 }
-                else if (letra != l){
-                    palavraDpsSorteada =palavraDpsSorteada + '-'
-                }
-                else if(letra == palavras[-1]){
-                    pass
+                else {
+                    document.getElementById("forca").src=`imagens/4.png`
+                    document.write('<h1>VOCÊ PERDEU :(<h1> <img src="imagens/perdeu.png" alt="carinha morta" id="perdeu">')
+                    return; 
                 }
             }
             
-            document.getElementById("palavraOculta").innerText = palavraDpsSorteada
+            for (var i = 0; i < palavraSorteada.length; i++){
+                if (palavraSorteada[i] == letra){ 
+                    palavraOculta[i] = letra 
+                }
+            }
+            
+            document.getElementById("palavraOculta").innerText = palavraOculta.join(''); 
+            document.getElementById("letrasUsadas").innerText = `Letras usadas: ${letrasUsadas.join(', ')}` 
 
+            if (palavraOculta.includes('-') == false){
+                document.write('<h1>VOCÊ VENCEU :)</h1> <img src="imagens/ganhou.png" alt="carinha feliz" id="ganhou">')
+                return; 
+            }
         }
-        botao.addEventListener("click", forca());
-
     </script>
 </body>
 </html>
