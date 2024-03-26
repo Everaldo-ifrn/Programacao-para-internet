@@ -1,0 +1,27 @@
+Array = lista
+
+for --> 
+
+forEach --> percorrer cada caracter de uma string! (percorre uma lista!)
+
+-> Qual a diferença entre for e forEach em JS!
+
+
+- COMANDOS -
+console.log() --> print do python no JS!
+
+.unshift() --> 
+
+.shift() --> 
+
+.pop() --> 
+
+.push() --> 
+
+.indexOf() --> 
+
+.splice() --> 
+
+.length() --> 
+
+.isArray() --> 
