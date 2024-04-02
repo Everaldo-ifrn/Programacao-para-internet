@@ -1,0 +1,7 @@
+=> p/ arrays
+fill(valor, posição de inicio, posição de fim) // troca a lista por valor
+filter
+includes
+
+trim
+match e replace -> deixa pra depois!!!
