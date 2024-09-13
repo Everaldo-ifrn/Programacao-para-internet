@@ -1,1 +1,447 @@
-/* CSS Global - para todos componentes! */
+*{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.body{
+    font-size: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 70px;
+    margin-bottom: 0;
+    background-color: #11142616;
+}
+
+.header{
+    background-color: #111426;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    box-shadow: 0px 5px 20px #000000;
+    z-index: 1;
+
+}
+
+.header h2{
+    color: #51a6a6;
+    font-size: 25px;
+    padding-left: 2%;
+    
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+}
+
+.nav h2{
+    margin: 5px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #51a6a6;
+}
+
+.nav a:hover{
+    background-color: #51a6a6;
+    border-radius: 8px;
+    padding: 4px;
+    color:#111426;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+.menu{
+    list-style:none;
+}
+.menu li{
+    position:relative;
+    font-size: 25px;
+}
+.menu li a{
+    color:#51a6a6; 
+    text-decoration: none; 
+    padding: 5px 10px; 
+    display: block;
+}
+.menu li a:hover{
+    background:#51a6a6;
+    color:#111426;
+}
+.menu li ul{
+    position:absolute;
+    top:25px;
+    left:0;
+    background-color:#111426;
+    display:none;
+}
+.menu li:hover ul, .menu li.over ul{
+    display:block;
+}
+.menu li ul li{
+    border:1px solid #c0c0c0;
+    display:block;
+    width:170px;
+}
+.menuOpcoes{
+    border: 1px solid #c0c0c0;
+}
+
+.hero{
+    background-color: #111426;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+}
+
+.hero h1{
+    color: lightgrey;
+    font-size:45px;
+    text-shadow: 9px 9px 10px black;
+    padding: 0 5%;
+    
+}
+
+.hero img{
+    box-shadow: -10px 10px 8px black;
+    width: 25%;
+    border-radius: 20px;
+    margin: 10% 0;
+}
+
+.apresentacao{
+    color: #111426;
+}
+
+.apresentacao img{
+    box-shadow: 10px 10px 10px #111426;
+    border-radius: 100%;
+    border: 10px solid lightgrey;
+    
+}
+
+#minhaDescricao{
+    width: 50%;
+    height: 100%;
+    color: #111426;
+    text-shadow: 0.5px 0px 0px #111426;
+    background-color: #51a6a6ee;
+    padding: 20px;
+    border-radius: 15px;
+    margin-right: 7%;
+} 
+
+#comprimento{
+    text-align: center;
+    text-shadow: 0.5px 0px 0px #51a6a6;
+}
+
+.apresentacao h2{
+    margin-top: 0;
+    text-align: center;
+}
+
+.euMaisDescricao{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#curiosidades{
+    text-align: center;
+    color: #111426;
+}
+
+#curiosidades ol{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+}
+
+#curiosidades li{
+    color: lightgrey;
+    background-color: #111426;
+    border-radius: 15px;
+    padding: 1%;
+    height: 100%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+#curiosidades img{
+    border-radius: 15px;
+    width: 400px;
+    height: 266.66px;
+}
+
+#educacao{
+    color: #111426;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#educacao table{
+    width: 30%;
+
+}
+
+#educacao td{
+    padding: 10px;
+}
+
+#educacao th{
+    background-color: #51a6a6;
+}
+
+.linhaSemBackground{
+    background-color: #51a6a69f;
+}
+
+#causos{
+    color: #111426;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#causos p{
+    text-shadow: 1px 1px 1px #111426;
+    color: #51a6a6;
+    background-color: #1114268a;
+    width: 100%;
+    padding: 10px;
+    text-align:justify;
+}
+#causos figure{
+    background-image: url(../public/fotos/causos.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 796px;
+    height: 464px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    border: 4px solid #111426;
+}
+
+#habilidades{
+    color: #111426;
+    text-align: center;
+}
+
+#habilidades ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#habilidades li{
+    background-color: #51a6a6;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.arrow, .img{
+    color: lightgrey;
+}
+
+.conteine {
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    
+}
+
+.card {
+    margin: 5px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#111426, #111426);
+    transition: all .5s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    background-image: linear-gradient(#51a6a6, #111426);
+}
+
+.card .img {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: 0.8;
+    
+}
+
+.card .img span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card:hover .img {
+    width: 430px;
+    opacity: 1;
+}
+
+.card:hover .img span {
+    font-size: 28px;
+}
+
+.card .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card:hover .content {
+    height: 100%;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card .content p {
+    margin: 0;   
+}
+
+.card .content .title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #111426;
+}
+
+.card .content .desc {
+    font-size: 24px;
+    font-weight: 100;
+    opacity: .8;
+    margin-top: 8px;
+    color: lightgrey;
+}
+
+.card .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card:hover .arrow {
+    transform: rotate(0);
+}
+
+.card .arrow span {
+    font-size: 24px;
+}
+
+#contato{
+    color: lightgrey;
+    background-color: #111426;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding-bottom: 4%;
+    padding-top: 3%;
+}
+
+#contato a, p{
+    color: #51a6a6;
+    text-decoration: none;
+}
+
+#contato a:hover{
+    color: #51a6a6;
+    text-decoration: underline;
+}
+
+#testandoAi{
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+    .hero{
+        flex-direction:column-reverse;
+        text-align: center;
+
+    }
+    .hero img{
+        width: 45%;
+        margin: 5% 0;
+    }
+
+    .euMaisDescricao{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    #minhaDescricao{
+        margin-right: 0;
+        width: 75%;
+    }
+
+    #educacao table{
+        width: 75%;
+        text-align: center;
+    }
+
+    #contato a, p{
+        text-align: center;
+
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .header{
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .menu{
+        display: none;
+    }
+
+}
