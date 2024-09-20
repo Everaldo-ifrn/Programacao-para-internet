@@ -15,8 +15,7 @@ function Header() {
                     </ul>
                 </li>
             </ul>
-            <h2>Everaldo Júnior</h2>
-
+            <h2>EJ</h2>
             <div className="nav">     
                 <a href="#curiosidades">Curiosidades</a> <br/>
                 <a href="#educacao">Educação</a> <br/>
