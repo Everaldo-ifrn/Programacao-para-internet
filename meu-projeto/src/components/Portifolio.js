@@ -1,6 +1,7 @@
+import stylels from "./Portifolio.module.css"
 function Portifolio() {
     return(
-        <article id="curiosidades">
+        <article className={stylels.fotos} id="portifolio">
             <h2>Portifólio</h2>
             <ol>
                 <li> <img src="./fotos/Academia.png"/> O projeto é o desenvolvimento de um software em Python que simule o funcionamento de uma academia, dando ênfase no cadastro dos clientes, nas suas fichas financeiras, e suas fichas de treino. <br /> <a href="https://github.com/Everaldo-ifrn/poo-academia">Link do Repositório</a> </li>

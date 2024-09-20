@@ -6,22 +6,19 @@ function Header() {
             <ul className="menu">
                 <li id="testandoAi"> <a href="#">Menu</a>
                     <ul className="menuOpcoes">
-                        <li><a href="#comprimento">Parágrafo</a></li>
+                        <li><a href="#apresentacao">Apresentação</a></li>
                         <li><a href="#curiosidades">Curiosidades</a></li>
-                        <li><a href="#educacao">Educação</a></li>
-                        <li><a href="#causos">Causos</a></li>
-                        <li><a href="#habilidades">Habilidades</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#portifolio">Portifólio</a></li>
+                        <li><a href="#contato">Contatos</a></li>
                     </ul>
                 </li>
             </ul>
             <h2>EJ</h2>
             <div className="nav">     
+                <a href="#apresentacao">Apresentação</a> <br/>
                 <a href="#curiosidades">Curiosidades</a> <br/>
-                <a href="#educacao">Educação</a> <br/>
-                <a href="#causos">Causos</a> <br/>
-                <a href="#habilidades">Habilidades</a> <br/>
-                <a href="#contato">Contato</a> <br/>
+                <a href="#portifolio">Portifólio</a> <br/>
+                <a href="#contato">Contatos</a> <br/>
             </div>
         </div>
     )

@@ -2,7 +2,7 @@ import '../index.css'
 
 function ParagrafoPessoal() {
     return(
-        <article className="apresentacao">
+        <article className="apresentacao" id="apresentacao">
             <h2>Apresentação</h2>
             <p id="comprimento">Olá, bem-vindo a minha página pessoal!</p>
             <div className="euMaisDescricao">

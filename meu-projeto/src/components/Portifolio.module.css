@@ -1,5 +1,56 @@
-#curiosidades img{
+.fotos img{
     border-radius: 50px;
     width: 1078px;
     height: 266.66px;
+}
+
+.fotos{
+    text-align: center;
+    color: #111426;
+}
+
+.fotos ol{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.fotos li{
+    color: lightgrey;
+    background-color: #111426;
+    border-radius: 15px;
+    padding: 1%;
+    height: 100%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.fotos img{
+    border-radius: 15px;
+    width: 400px;
+    height: 266.66px;
+
+}
+
+.fotos a{
+    color: #111426;
+    background-color: #51a6a6;
+    border-radius: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+
+}
+
+.fotos a:hover{
+    background-color: #111426;
+    color: #51a6a6;
+    border: 3px solid #51a6a6;
+    text-decoration: underline;
 }
