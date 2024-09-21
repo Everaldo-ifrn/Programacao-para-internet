@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, 
 
-## `cd ./meu-projeto/`
+### `cd ./meu-projeto/`
 
 you can run:
 
